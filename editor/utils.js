@@ -40,5 +40,13 @@ export function normalizeDriveUrl(url) {
 export function assetPreview(asset) {
   if (!asset) return '';
   if (asset.source === 'blob') return state.objectUrls.get(asset.id) || '';
-  return normalizeDriveUrl(asset.url || asset.path || '');
+  const value = normalizeDriveUrl(asset.url || asset.path || '');
+  if (!value) return '';
+  try {
+    if (/^(?:https?:|data:|blob:)/i.test(value)) return value;
+    const portfolioRoot = new URL('../', window.location.href);
+    return new URL(value.replace(/^\.\//, ''), portfolioRoot).href;
+  } catch (_) {
+    return value;
+  }
 }
