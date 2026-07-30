@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRO-CHISTKA — Наши работы</title>
+  <meta name="description" content="Демонстрация виджета портфолио PRO-CHISTKA" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; min-height: 100%; background: #f6f4ef; font-family: Manrope, Arial, sans-serif; }
+    .demo-shell { max-width: 1400px; margin: 0 auto; padding: 40px 24px 80px; }
+    .demo-note { margin: 0 0 24px; padding: 16px 18px; background: #fff; border-radius: 18px; color: #4e4b45; font-size: 14px; box-shadow: 0 12px 30px rgba(31,29,24,.06); }
+  </style>
+</head>
+<body>
+  <main class="demo-shell">
+    <p class="demo-note">Тестовая страница. Цвета и типографика временные — сейчас проверяется функционал.</p>
+    <section
+      data-prochistka-portfolio
+      data-source="./data/works-data.js"
+      data-limit="6"
+      data-popup="#popup:prolead"
+      data-title="Наши работы"
+      data-subtitle="Реальные объекты и результаты нашей работы"
+    ></section>
+  </main>
+
+  <script src="./widget.js" defer></script>
+</body>
+</html>
